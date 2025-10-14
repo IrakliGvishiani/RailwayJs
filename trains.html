@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            position: fixed;
+            top: 0;
+            right: 10px;
+            left: 10px;
+            
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+   
+
+        nav {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+
+}
+
+.main-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.results-container {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.results-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 150px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    font-weight: 600;
+    color: #666;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.result-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 150px;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.result-item:hover {
+    background-color: #f8f9fa;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.train-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.train-id {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+.train-route {
+    color: #666;
+    font-size: 14px;
+}
+
+.time-display {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.station-name {
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.booking-button {
+    background-color: #4052d5;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.booking-button:hover {
+    background-color: #2e3da8;
+}
+ footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: #666;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+
+@media (max-width: 768px) {
+    .results-header {
+        display: none;
+    }
+
+    .result-item {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .booking-button {
+        width: 100%;
+    }
+        header {
+                padding: 20px;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+            }
+}
+
+
+    </style>
+</head>
+<body>
+            <header >
+            <div class="logo">Step Railway</div>
+            <nav>
+                
+                <a href="#tickets">ბილეთის შემოწმება/დაბრუნება</a>
+              
+            </nav>
+        </header>
+    
+    
+    <!-- <div class="butDiv"></div> -->
+    <h1 class="page-title" style="margin-top: 100px;;">მატარებლების ჩამონათვალი</h1>
+
+     <div class="main-wrapper" style="margin-bottom: 50px;">
+        
+        
+        <div class="results-container">
+            <div class="results-header">
+                <div>მატარებლის ნომერი</div>
+                <div>გამგზავრება</div>
+                <div>ჩასვლა</div>
+                <div></div>
+            </div>
+            
+        </div>
+    </div>
+
+    <footer>
+            <p><strong>Step Railway</strong> - თქვენი სანდო პარტნიორი მგზავრობაში</p>
+            <p>📧 info@stepprojects.ge | 📞 +995 555 123 456</p>
+            <p style="margin-top: 20px; color: #999; font-size: 14px;">© 2025 Step Railway. ყველა უფლება დაცულია.</p>
+        </footer>
+
+
+    <script src="./trains.js"></script>
+</body>
+</html>

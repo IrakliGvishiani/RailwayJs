@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step Railway - რკინიგზის ბილეთები</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header >
+            <div class="logo">Step Railway</div>
+            <nav>
+                
+                <a href="#tickets">ბილეთის შემოწმება/დაბრუნება</a>
+              
+            </nav>
+        </header>
+
+        
+
+        <div class="search-card">
+            <h2>🔍 იპოვეთ თქვენი მატარებელი</h2>
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="">საიდან</label>
+                    <select id="From"
+                    class="fromSelect" required>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="">სად</label>
+                    <select id="to" required>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="">თარიღი</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="passengers">მგზავრები</label>
+                    <input type="number" id="passengers" min="1" max="10" value="1" required>
+                </div>
+
+                
+                <div id="formBtn" class="form-group" style="align-items: flex-end;">
+                  <button class="btn" id="search">ძებნა</button>
+                  <button class="butDiv"></button>
+                </div>
+
+                <div class="container"></div>
+                <div class="results"></div>
+            </form>
+
+            <div class="warning-box">
+                <strong>⚠️ მნიშვნელოვანი ინფორმაცია:</strong>
+                ბილეთების შესაძენად საჭიროა ყველა მგზავრის პირადი ნომერი. გთხოვთ, მოამზადოთ ეს მონაცემები წინასწარ.
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-secondary" onclick="alert('ბილეთის შემოწმება')">ბილეთის შემოწმება</button>
+                <button class="btn btn-secondary" onclick="alert('განრიგის ნახვა')">მატარებლების განრიგი</button>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>სწრაფი დაჯავშნა</h3>
+                <p>დაჯავშნეთ ბილეთები რამდენიმე წამში მარტივი და ინტუიციური ინტერფეისით</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>უსაფრთხო გადახდა</h3>
+                <p>თქვენი მონაცემების სრული დაცვა და უსაფრთხო ონლაინ გადახდის სისტემა</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>ელექტრონული ბილეთი</h3>
+                <p>მიიღეთ ელექტრონული ბილეთი თქვენს ტელეფონზე ან ელფოსტაზე</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💳</div>
+                <h3>ადვილი გადახდა</h3>
+                <p>გადაიხადეთ ბარათით, მობილური ბანკით ან სხვა მოხერხებული გზით</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎫</div>
+                <h3>ადგილის არჩევანი</h3>
+                <p>თავად აირჩიეთ სასურველი ადგილი ვაგონის რუკაზე</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📞</div>
+                <h3>24/7 მხარდაჭერა</h3>
+                <p>ჩვენი გუნდი ყოველთვის მზადაა დაგეხმაროთ ნებისმიერ საკითხში</p>
+            </div>
+        </div>
+
+       
+
+        <footer>
+            <p><strong>Step Railway</strong> - თქვენი სანდო პარტნიორი მგზავრობაში</p>
+            <p>📧 info@stepprojects.ge | 📞 +995 555 123 456</p>
+            <p style="margin-top: 20px; color: #999; font-size: 14px;">© 2025 Step Railway. ყველა უფლება დაცულია.</p>
+        </footer>
+    </div>
+
+    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
