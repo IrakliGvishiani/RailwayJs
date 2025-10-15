@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>მატარებლის დეტალები</title>
+  <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 20px;
+        }
+
+        .left-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .right-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .train-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+        }
+
+        .train-number {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .train-name {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .time-info {
+            text-align: center;
+        }
+
+        .time {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .station {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4169e1;
+        }
+
+        .passenger-section {
+            margin-top: 30px;
+        }
+
+        .passenger-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .add-button, .delete-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .add-button {
+            background: #4169e1;
+            color: white;
+        }
+
+        .delete-button {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .summary-title {
+            color: #4169e1;
+            font-size: 22px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .summary-row:last-of-type {
+            border-bottom: 2px solid #333;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-weight: 600;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+
+        .book-button {
+            width: 100%;
+            padding: 15px;
+            background: #4169e1;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .vagonsDiv{
+            display: flex;
+            gap: 30px;
+
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .train-card {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .time-info {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 10px;
+            }
+
+            .left-section, .right-section {
+                padding: 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .time {
+                font-size: 20px;
+            }
+        }
+  </style>
+</head>
+<body>
+   <!-- <div class="container">
+        <div class="left-section">
+            <h1>შეიყვანეთ თქვენი მონაცემები</h1> -->
+
+            <div class="train-card">
+ 
+            </div>
+
+            <div class="rame"></div>
+<!-- 
+            <div class="rame"></div>
+
+            <h2>საკონტაქტო ინფორმაცია</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>იმეილი</label>
+                    <input type="email" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label>ტელეფონის ნომერი</label>
+                    <input type="tel" placeholder="">
+                </div>
+            </div>
+
+            <div class="passenger-section">
+                <div class="passenger-header">
+                    <h2>მგზავრების ინფორმაცია</h2>
+                    <div>
+                        <button class="delete-button">წაშლა</button>
+                    </div>
+                </div>
+
+                <h3>მგზავრი 1</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>აგბოლო:</label>
+                        <input type="text" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label>აგბოლის ნომერი</label>
+                        <input type="text" placeholder="">
+                    </div>
+                </div>
+
+                <button class="add-button">+ დამატება</button>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="summary-title">ინვოისი</div>
+
+            <div class="summary-row">
+                <span>ადგილი</span>
+                <span>ფასი</span>
+            </div>
+
+            <div class="summary-row">
+                <span>5A</span>
+                <span class="price">35₾</span>
+            </div>
+
+            <div class="summary-row">
+                <span>სულ:</span>
+                <span class="price">35.00₾</span>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" checked>
+                <label for="terms">წავიკითხე და ვეთანხმები წესებს</label>
+            </div>
+
+            <button class="book-button">ბილეთის რეზერვაცია</button>
+        </div>
+    </div> -->
+
+  <script src="./vagons&seats.js"></script>
+</body>
+</html>
