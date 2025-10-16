@@ -2,6 +2,11 @@ const params = new URLSearchParams(window.location.search)
 const from = params.get('from')
 const to = params.get('to')
 const date = params.get('date')
+
+const passengers = params.get('passengers')
+
+
+
 const resultDiv = document.querySelector('.results-list')
 
 resultDiv.innerHTML = `<p style="text-align:center; color:gray;">🔄 მიმდინარეობს ძებნა...</p>`
@@ -67,5 +72,5 @@ fetch(`https://railway.stepprojects.ge/api/getdeparture?from=${from}&to=${to}&da
   })
 
 function book(id) {
-  window.location.href = `vagons&seats.html?id=${encodeURIComponent(id)}`
+  window.location.href = `vagons&seats.html?id=${encodeURIComponent(id)}&passengers=${passengers}`
 }

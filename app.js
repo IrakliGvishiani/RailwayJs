@@ -2,6 +2,7 @@ let from = document.querySelector('#From')
 let to = document.querySelector('#to')
 let date = document.querySelector('#date')
 let search = document.querySelector('#search')
+let passengers = document.querySelector('#passengers')
 
 
 fetch('https://railway.stepprojects.ge/api/stations')
@@ -31,7 +32,8 @@ search.addEventListener('click', (e) => {
   const params = new URLSearchParams({
     from: from.value,
     to: to.value,
-    date: date.value
+    date: date.value,
+    passengers : passengers.value
   })
 
   window.location.href = `trains.html?${params.toString()}`
