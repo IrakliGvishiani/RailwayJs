@@ -144,7 +144,7 @@
 
         .form-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 15px;
             margin-bottom: 30px;
         }
@@ -276,36 +276,168 @@
             margin-top: 20px;
         }
 
-        .vagg{
-            display: flex;
-            justify-self: center;
-            background-color: rgba(190, 224, 173, 0.626);
-            padding: 20px;
-            border-radius: 20px;
-            font-size: 19px;
-        }
+        .vagg {
+  display: flex;
+  justify-self: center;
+  background-color: #4169e1;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 19px;
+  height: 60px;
+  color: white;
+}
 
-       .seatsN {
-    background: #90EE90;
-    padding: 15px 8px 15px 8px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
+.seatsN {
+  background: #90EE90;
+  padding: 15px 8px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s ease;
+  width: 50px;     
+  height: 50px; 
 }
 
 .seatsN:hover {
-    background: #7CD87C;
+  background: #7CD87C;
 }
 
 .rame {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 12px;
+  padding: 10px;
+  margin-top: 30px;
+  justify-items: center;
 }
-.X{
-    display: none;
+
+.X {
+  display: none;
+}
+
+.f {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.f > button {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: #4169e1;
+  color: white;
+  cursor: pointer;
+}
+
+.vagOns {
+  position: fixed;
+  background-color: rgba(198, 197, 197, 0.85);
+  z-index: 10;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 900px;
+  height: auto;
+  bottom: 20px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 12px;
+  overflow-y: auto;
+   scrollbar-width: none;
+}
+
+.vagRow {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.ro i {
+  color: red;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .vagOns {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+  }
+
+  .vagRow {
+    gap: 25px;
+  }
+
+  .ro i {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vagOns {
+    width: 95%;
+    top: 20px;
+    bottom: 10px;
+    padding: 10px;
+  }
+
+  .vagRow {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .rame {
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 8px;
+  }
+
+  .seatsN {
+    font-size: 14px;
+    padding: 10px 6px;
+  }
+
+  .ro i {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vagOns {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+    padding: 8px;
+  }
+
+  .rame {
+    grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+    gap: 6px;
+  }
+
+  .seatsN {
+    font-size: 12px;
+    padding: 8px 4px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .ro i {
+    font-size: 28px;
+  }
 }
 
         @media (max-width: 1024px) {
@@ -381,14 +513,13 @@
             <div class="train-card">
  
             </div>
-            <div style="width: 100%;
-            display: flex;justify-content: center;padding-bottom: 10px;;" class=""><p style="font-size: 18px;">აირჩიეთ ვაგონი</p></div>
+           
             <div class="vagons">
 
             </div>
         
             <i class="fa-solid fa-xmark X"></i>
-            <div class="rame"></div>
+           
 
             <h2>საკონტაქტო ინფორმაცია</h2>
             <div class="form-grid">
@@ -400,6 +531,16 @@
                     <label>ტელეფონის ნომერი</label>
                     <input type="tel" placeholder="">
                 </div>
+            </div>
+
+            <div class="vagOns">
+                <div style="width: 100%;display: flex;justify-content: end;" class="ro">
+                    <i style="color: rgb(255, 0, 0);font-size: 50px;cursor: pointer;" class="fa-solid fa-xmark xM"></i></div>
+                 <div style="width: 100%;
+            display: flex;justify-content: center;padding-bottom: 10px;;" class=""><p style="font-size: 24px;color: black;">აირჩიეთ ვაგონი</p></div>
+                <div class="vagRow"></div>
+                 <div class="rame"></div>
+                
             </div>
 
             <div class="passenger-section">

@@ -11,6 +11,13 @@ let passId = params.get('passengers')
 
     let passDiv = document.querySelector('.passengeeeers')
 
+    let fixedVag = document.querySelector('.vagOns')
+
+    let row = document.querySelector('.vagRow')
+
+    let seatsButton = document.querySelector('.seatsButton')
+    let xMCross = document.querySelector('.xM')
+
     fetch(`https://railway.stepprojects.ge/api/trains/${id}`)
       .then(res => res.json())
       .then(train => {
@@ -38,8 +45,9 @@ let passId = params.get('passengers')
                     let vag = document.createElement('div')
                     vag.classList.add('vagg')
                     vag.style.cursor = 'pointer'
-                    vag.textContent = `${el.name}`
-                    vaagonsDiv.appendChild(vag)
+                    vag.textContent = `${el.name} 🚂`
+                    row.appendChild(vag)
+                    
 
                     vag.addEventListener('click',() => {
                         fetch(`https://railway.stepprojects.ge/api/getvagon/${el.id}`)
@@ -72,7 +80,7 @@ let passId = params.get('passengers')
 
                               rame.style.position = 'relative'
                            rame.style.display = 'grid'
-                          rame.style.gridTemplateColumns = 'repeat(3, 1fr)'
+                          rame.style.gridTemplateColumns = 'repeat(6, 1fr)'
                            rame.style.gap = '15px'
 
                             for(let vagon of resp){
@@ -83,6 +91,7 @@ let passId = params.get('passengers')
                                                       seatBut.classList.add('seatsN')
                                 seatBut.textContent = `${seat.number}`
                                 rame.appendChild(seatBut)
+
                                 }
                                 
                             }
@@ -120,12 +129,26 @@ let passId = params.get('passengers')
                         <label>გვარი</label>
                         <input type="text" placeholder="">
                     </div>
-                    
+                    <div class="f">
+                    <button class="seatsButton">ადგილის არჩევა</button>
+                    </div>
                 </div>
         `
+     let allSeatsButtons = document.querySelectorAll('.seatsButton')
+         allSeatsButtons.forEach((btn, index) => {
+           btn.addEventListener('click', () => {
+            fixedVag.style.display = 'flex'
+        })
+    })
+
+    xMCross.addEventListener('click',() => {
+      fixedVag.style.display = 'none'
+    })
           }
 
     }
+
+
 
 
 

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Step Railway - რკინიგზის ბილეთები</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
        
     </style>
@@ -16,7 +17,22 @@
             <nav>
                 
                 <a href="#tickets">ბილეთის შემოწმება/დაბრუნება</a>
-              
+                 
+                <div style="display: flex;flex-direction: column;;
+                justify-content: center;align-items: center;position: relative;" class="registerDiv">
+                      <i style="color: #667eea;font-size: 20px;;" class="fa-solid fa-circle-user"></i>
+
+                     <div class="toggle-buttons">
+                        <div style="display: flex;gap: 5px;;" class="divBut">
+                                     <button onclick="window.location.href = './Login.html'">Login</button>
+                          <button onclick="window.location.href = './Register.html'">Register</button>
+                        </div>
+                    </div>
+                    <p>Register/Login</p>
+                </div>
+                <div class="logOut">
+                     <p class="Log-out">Log out</p>
+                </div>
             </nav>
         </header>
 

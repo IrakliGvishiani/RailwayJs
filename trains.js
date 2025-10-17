@@ -72,5 +72,5 @@ fetch(`https://railway.stepprojects.ge/api/getdeparture?from=${from}&to=${to}&da
   })
 
 function book(id) {
-  window.location.href = `vagons&seats.html?id=${encodeURIComponent(id)}&passengers=${passengers}`
+  window.location.href = `vagons&seats.html?id=${encodeURIComponent(id)}&passengers=${passengers}&date=${date}`
 }
