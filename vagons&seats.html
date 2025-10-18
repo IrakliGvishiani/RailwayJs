@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>მატარებლის დეტალები</title>
+  <title>ადგილების დაჯავშნა</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
             * {
@@ -303,6 +303,10 @@
   background: #7CD87C;
 }
 
+.seatsN.activ{
+    background-color: rgb(229, 38, 38);
+}
+
 .rame {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
@@ -367,6 +371,21 @@
   cursor: pointer;
 }
 
+.seatIndicator{
+    width: 100px;
+    height: 50px;
+    background-color: #4169e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;;
+}
+
+.seatIndicator > p{
+    color: white;
+    font-weight: bold;
+}
+
 @media (max-width: 1024px) {
   .vagOns {
     width: 90%;
@@ -383,6 +402,8 @@
     font-size: 36px;
   }
 }
+
+
 
 @media (max-width: 768px) {
   .vagOns {
@@ -412,6 +433,10 @@
   }
 }
 
+.seatsN.activ{
+    background-color: rgb(213, 58, 58);
+}
+
 @media (max-width: 480px) {
   .vagOns {
     width: 100%;
@@ -437,6 +462,7 @@
 
   .ro i {
     font-size: 28px;
+    
   }
 }
 
@@ -525,11 +551,11 @@
             <div class="form-grid">
                 <div class="form-group">
                     <label>იმეილი</label>
-                    <input type="email" placeholder="">
+                    <input required id="email" type="email" placeholder="">
                 </div>
                 <div class="form-group">
                     <label>ტელეფონის ნომერი</label>
-                    <input type="tel" placeholder="">
+                    <input required id="phone" type="tel" placeholder="">
                 </div>
             </div>
 
@@ -563,15 +589,10 @@
                 <span>ფასი</span>
             </div>
 
-            <div class="summary-row">
-                <span>5A</span>
-                <span class="price">35₾</span>
-            </div>
+           <div class="prAndSeat"></div>
 
-            <div class="summary-row">
-                <span>სულ:</span>
-                <span class="price">35.00₾</span>
-            </div>
+            <div class="sumPrice"></div>
+   
 
             <div class="checkbox-group">
                 <input type="checkbox" id="terms" checked>
