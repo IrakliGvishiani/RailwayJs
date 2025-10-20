@@ -11,12 +11,11 @@ let email = document.querySelector('#email')
 let phone = document.querySelector('#phone')
 let seatiD = ''
 
-
+let booked = document.querySelector('.booked-button')
 
 let trainCard = document.querySelector('.train-card')
 
-let nameOf = document.querySelectorAll('.nameOfmgzavri')
-let mgzavriId = document.querySelectorAll('.idOfmgzavri')
+
 let rame = document.querySelector('.rame')
 let vaagonsDiv = document.querySelector('.vagons')
 
@@ -32,6 +31,7 @@ let sumPrice = document.querySelector('.sumPrice')
 
 
 let selectedSeats = []
+let selectedSeatIds = []
 let currentPassengerIndex = null
 let seatPrices = [] 
 
@@ -108,7 +108,11 @@ fetch(`https://railway.stepprojects.ge/api/trains/${id}`)
                   seatBut.textContent = `${seat.number}`
                   
                
-                  
+                     if (seat.isOccupied) {
+                         seatBut.setAttribute('disabled', true)
+                         seatBut.style.background = '#999'
+                         seatBut.style.cursor = 'not-allowed'
+                       }
 
                   if (selectedSeats[currentPassengerIndex] === seat.number) {
                     seatBut.classList.add('activ')
@@ -121,14 +125,21 @@ fetch(`https://railway.stepprojects.ge/api/trains/${id}`)
                     document.querySelectorAll('.seatsN').forEach(btn => {
                       btn.classList.remove('activ')
                     })
+
+                
+
+                  
+                  
                     
                      seatiD = seat.seatId
                     console.log(seatiD);
                     seatBut.classList.add('activ')
                     
+                    
 
                     selectedSeats[currentPassengerIndex] = seat.number
                     seatPrices[currentPassengerIndex] = seat.price
+                    selectedSeatIds[currentPassengerIndex] = seat.seatId 
                     
     
                     updateInvoice()
@@ -174,7 +185,7 @@ function updateInvoice() {
       <span class="price">${totalPrice.toFixed(2)}₾</span>
     </div>
   `
-  
+  localStorage.setItem('totalPrice',totalPrice)
  
   document.querySelectorAll('.delete-seat').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -199,7 +210,7 @@ function renderPassengers(id) {
         </div>
         <div class="form-group">
           <label>პირადი ნომერი</label>
-          <input class="idOfmgzavri" type="text" placeholder="">
+          <input placeholder="უნდა იყოს 11 ციფრი" class="idOfmgzavri" type="text"  placeholder="" maxlength="11">
         </div>
         <div class="f">
           <button class="seatsButton" data-passenger="${i}">ადგილის არჩევა</button>
@@ -222,8 +233,47 @@ function renderPassengers(id) {
 }
 
 
+
 book.addEventListener('click',() => {
-  fetch('https://railway.stepprojects.ge/api/tickets/register',{
+
+  let nameOf = document.querySelectorAll('.nameOfmgzavri')
+  let mgzavriId = document.querySelectorAll('.idOfmgzavri')
+
+  let isEmpty = false
+  for(let i = 0;i< nameOf.length;i++){
+    if(!nameOf[i].value.trim() || !mgzavriId[i].value.trim() || mgzavriId[i].value.length != 11 || mgzavriId[i].value.includes(String)) {
+      isEmpty = true
+      break
+    }
+  }
+
+  if(phone.value.length < 8 || !email.value.includes('@') || isEmpty || isNaN(phone.value)){
+       Swal.fire({
+          icon: 'error',
+          title: 'შეცდომა...',
+          text: 'გთხოვთ შეავსოთ ყველა ველი!',
+            })
+            return
+  }
+
+
+  let peopleArray = []
+  for(let i = 0;i<nameOf.length;i++){
+    peopleArray.push(
+      {
+        seatId : selectedSeatIds[i],
+        name : nameOf[i].value,
+        surname : "string",
+        idNumber : mgzavriId[i].value,
+        status : "string",
+        payoutCompleted : true
+      }
+    )
+  }
+
+
+
+     fetch('https://railway.stepprojects.ge/api/tickets/register',{
     method : 'POST',
     headers : {
         'Content-Type' : 'application/json'
@@ -234,24 +284,48 @@ book.addEventListener('click',() => {
   date: date,
   email: email.value,
   phoneNumber: phone.value,
-  people: [
-    {
-      seatId: seatiD,
-      name: nameOf.value,
-      surname: "string",
-      idNumber: mgzavriId.value,
-      status: "string",
-      payoutCompleted: true
-    }
-  ]
+  people: peopleArray
     }
     )
   }).then(res => res.text())
   .then(data => {
     
-    alert(data)
+    if(data.includes('წარმატებით დაიჯავშნა')){
+
+          //     Swal.fire({
+          // icon: 'success',
+          // title: '',
+          // text: data,
+          //   })
+          
+            window.location.href = './Pay.html'
+
+    }
+    else if(data.includes('შეცდომა')){
+                    Swal.fire({
+          icon: 'error',
+          title: '',
+          text: 'ეს ადგილი დაკავებულია!',
+            })
+    }
+
+    console.log(data);
+  
+
+    let parts = data.split(':')
     
+    let ticketId = parts[1]
+
+
+    console.log(ticketId);
+
+    localStorage.setItem('ticketId',ticketId)
+
+   
   })
+  
+
+ 
 })
 
 

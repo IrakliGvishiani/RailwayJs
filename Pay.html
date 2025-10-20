@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>გადახდის გვერდი - Step Railway</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        .center{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+
+         .payment-wrapper-xk9f {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .balance-label-j3m8 {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .balance-display-v7r2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+        }
+
+        .alert-message-p4n1 {
+            color: #ff3b30;
+            font-size: 14px;
+            margin-bottom: 30px;
+            font-weight: 500;
+            display: none;
+        }
+
+        .input-container-w8q5 {
+            margin-bottom: 24px;
+        }
+
+        .grid-layout-z2d7 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .payment-wrapper-xk9f label {
+            display: block;
+            color: #1a1a1a;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .required-star-h5k3 {
+            color: #ff3b30;
+        }
+
+        .payment-wrapper-xk9f input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d1d1d6;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .payment-wrapper-xk9f input:focus {
+            outline: none;
+            border-color: #4169e1;
+            box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.1);
+        }
+
+        .payment-wrapper-xk9f input::placeholder {
+            color: #c7c7cc;
+        }
+
+        .submit-action-b6t9 {
+            width: 100%;
+            padding: 14px;
+            background: #4169e1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .submit-action-b6t9:hover {
+            background: #3555c7;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(65, 105, 225, 0.3);
+        }
+
+        .submit-action-b6t9:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 640px) {
+            .payment-wrapper-xk9f {
+                padding: 24px;
+            }
+
+            .grid-layout-z2d7 {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .balance-display-v7r2 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .payment-wrapper-xk9f {
+                padding: 20px;
+            }
+
+            .payment-wrapper-xk9f input {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+                   <header >
+            <a href="./index.html"><div class="logo">Step Railway</div></a>
+            <nav>
+                
+                <a href="./deleteOrCheck.html">ბილეთის შემოწმება/დაბრუნება</a>
+              
+            </nav>
+        </header>
+
+    
+
+    <div class="center">
+          
+    </div>
+
+    <script src="./Pay.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

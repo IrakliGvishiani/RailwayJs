@@ -38,7 +38,7 @@ search.addEventListener('click', (e) => {
     Swal.fire({
   icon: 'error',
   title: 'შეცდომა...',
-  text: 'გთხოვთ შეავსოთ ყვყელა ველი!',
+  text: 'გთხოვთ შეავსოთ ყველა ველი!',
 })
     return
   }
@@ -46,7 +46,7 @@ search.addEventListener('click', (e) => {
         Swal.fire({
   icon: 'error',
   title: 'შეცდომა...',
-  text: '10-ზე მეტ მგზავრს ვერ დაარეგისტრირებთ!',
+  text: '10-ზე მეტ მგზავრს ვერ აირჩევთ!',
 })
 return
   }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ადგილების დაჯავშნა</title>
+  <title>ადგილების დაჯავშნა - Step Railway</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
             * {
@@ -237,7 +237,8 @@
             margin-right: 10px;
         }
 
-        .book-button {
+        .book-button,
+        .booked-button {
             width: 100%;
             padding: 15px;
             background: #4169e1;
@@ -247,6 +248,12 @@
             font-size: 16px;
             cursor: pointer;
             font-weight: 600;
+        }
+        .booked-button{
+            display: none;
+            margin-top: 10px;;
+            justify-content: center;
+            align-items: center;
         }
 
         .vagonsDiv{
@@ -385,6 +392,7 @@
     color: white;
     font-weight: bold;
 }
+
 
 @media (max-width: 1024px) {
   .vagOns {
@@ -528,7 +536,7 @@
             <a href="./index.html"><div class="logo">Step Railway</div></a>
             <nav>
                 
-                <a href="#tickets">ბილეთის შემოწმება/დაბრუნება</a>
+                <a href="./deleteOrCheck.html">ბილეთის შემოწმება/დაბრუნება</a>
               
             </nav>
         </header>
@@ -540,24 +548,22 @@
  
             </div>
            
-            <div class="vagons">
-
-            </div>
+        
         
             <i class="fa-solid fa-xmark X"></i>
            
 
             <h2>საკონტაქტო ინფორმაცია</h2>
-            <div class="form-grid">
+            <form class="form-grid">
                 <div class="form-group">
                     <label>იმეილი</label>
                     <input required id="email" type="email" placeholder="">
                 </div>
                 <div class="form-group">
                     <label>ტელეფონის ნომერი</label>
-                    <input required id="phone" type="tel" placeholder="">
+                    <input required id="phone" type="tel" placeholder="მინიმუმ 8 ციფრი">
                 </div>
-            </div>
+            </form>
 
             <div class="vagOns">
                 <div style="width: 100%;display: flex;justify-content: end;" class="ro">
@@ -600,15 +606,18 @@
             </div>
 
             <button class="book-button">ბილეთის რეზერვაცია</button>
+             <!-- <a href="./Pay.html"><button class="booked-button">ბილეთის ნახვა</button></a> -->
         </div>
     </div>
 
+        
         <footer>
             <p><strong>Step Railway</strong> - თქვენი სანდო პარტნიორი მგზავრობაში</p>
-            <p>📧 info@stepprojects.ge | 📞 +995 555 123 456</p>
+            <p> info@stepprojects.ge |  +995 555 123 456</p>
             <p style="margin-top: 20px; color: #999; font-size: 14px;">© 2025 Step Railway. ყველა უფლება დაცულია.</p>
         </footer>
 
   <script src="./vagons&seats.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
