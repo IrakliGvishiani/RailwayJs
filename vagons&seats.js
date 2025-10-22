@@ -1,5 +1,5 @@
 const params = new URLSearchParams(window.location.search)
-const id = params.get('id')
+let id = params.get('id')
 let passId = params.get('passengers')
 let date = params.get('date')
 
@@ -64,7 +64,7 @@ fetch(`https://railway.stepprojects.ge/api/trains/${id}`)
          let vag = document.createElement('div')
         vag.classList.add('vagg')
           vag.style.cursor = 'pointer'
-        vag.textContent = `${el.name} 🚂`
+        vag.textContent = `${el.name}`
         row.appendChild(vag)
 
          vag.addEventListener('click', () => {
@@ -158,7 +158,7 @@ fetch(`https://railway.stepprojects.ge/api/trains/${id}`)
   })
   .catch(() => {
     document.querySelector('.trainInfo').innerHTML = `
-      <p style="color:red; text-align:center;">⚠️ შეცდომა სერვერთან დაკავშირებისას</p>`
+      <p style="color:red; text-align:center;">შეცდომა სერვერთან დაკავშირებისას</p>`
   })
 
 function updateInvoice() {
@@ -305,7 +305,7 @@ book.addEventListener('click',() => {
                     Swal.fire({
           icon: 'error',
           title: '',
-          text: 'ეს ადგილი დაკავებულია!',
+          text: 'გთხოვთ აირჩიოთ ვაგონი და ადგილი!',
             })
     }
 
