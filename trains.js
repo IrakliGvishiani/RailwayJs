@@ -9,7 +9,7 @@ const passengers = params.get('passengers')
 
 const resultDiv = document.querySelector('.results-list')
 
-resultDiv.innerHTML = `<p style="text-align:center; color:gray;">🔄 მიმდინარეობს ძებნა...</p>`
+resultDiv.innerHTML = `<p style="text-align:center; color:gray;">მიმდინარეობს ძებნა...</p>`
 
 fetch(`https://railway.stepprojects.ge/api/getdeparture?from=${from}&to=${to}&date=${date}`)
   .then(resp => resp.json())

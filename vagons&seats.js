@@ -247,7 +247,7 @@ book.addEventListener('click',() => {
     }
   }
 
-  if(phone.value.length < 8 || !email.value.includes('@') || isEmpty || isNaN(phone.value)){
+  if(phone.value.length < 8 || !email.value.includes('@gmail.com') || isEmpty || isNaN(phone.value)){
        Swal.fire({
           icon: 'error',
           title: 'შეცდომა...',
@@ -322,7 +322,8 @@ book.addEventListener('click',() => {
     localStorage.setItem('ticketId',ticketId)
 
    
-  })
+  }).catch(console.error(error)
+  )
   
 
  

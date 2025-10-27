@@ -15,6 +15,17 @@ let passengers = document.querySelector('#passengers')
 let regisgterButtons = document.querySelector('.toggle-buttons')
 let registerDiv = document.querySelector('.registerDiv')
 
+
+const today =  new Date()
+
+let year = today.getFullYear()
+let month = String(today.getMonth() + 1)
+let day = String(today.getDate())
+
+let formatted = `${year}-${month}-${day}`
+
+date.min = formatted
+
 fetch('https://railway.stepprojects.ge/api/stations')
   .then(resp => resp.json())
   .then(resp => {
@@ -22,7 +33,8 @@ fetch('https://railway.stepprojects.ge/api/stations')
       from.innerHTML += `<option value="${el.name}">${el.name}</option>`
       to.innerHTML += `<option value="${el.name}">${el.name}</option>`
     })
-  })
+  }).catch(console.log('error')
+  )
 
   registerDiv.addEventListener('click',() => {
     regisgterButtons.classList.toggle("active")

@@ -136,9 +136,7 @@ deleteT.addEventListener('click',() => {
     input.value = ''
         
     }
-    else{
-        console.log('აბა რას აჭერდი :D');
-    }
+
 })
 
     
