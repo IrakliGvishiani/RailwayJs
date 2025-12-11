@@ -16,13 +16,9 @@ let regisgterButtons = document.querySelector('.toggle-buttons')
 let registerDiv = document.querySelector('.registerDiv')
 
 
-const today =  new Date()
 
-let year = today.getFullYear()
-let month = String(today.getMonth() + 1)
-let day = String(today.getDate())
 
-let formatted = `${year}-${month}-${day}`
+let formatted = new Date().toISOString().split('T')[0]
 
 date.min = formatted
 
